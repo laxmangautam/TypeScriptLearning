@@ -2,13 +2,22 @@
     firstName:'Laxman',
     lastname : "Gautam",
     department :"Development",
-    manager:"JM"
+    manager:"JM",
+    printName : function() {
+        return this.
+    }
 
 };
+console.log(employee);
 // Speical operator. 
 console.log("firstName" in employee); // in operator  will check given attribute or property exists in object.
 console.log(delete employee.firstName)
 console.log("firstName" in employee); // Now firstName attrivute is not exists. 
+
+for ( let property in employee) {
+    console.log(employee +":" + employee[property]);
+
+}
 
 // arithmetic operation.
 let num1 : string = "10";
