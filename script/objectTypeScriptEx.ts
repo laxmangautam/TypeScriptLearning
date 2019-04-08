@@ -1,21 +1,41 @@
- let employee  = {
-    firstName:'Laxman',
-    lastname : "Gautam",
-    department :"Development",
-    manager:"JM",
-    printName : function() {
-        return this.
-    }
+interface iEmployee {
+    firstName : String,
+    lastName : String,
+    department:String,
+    salary:number,
+    manager?:iEmployee,
+    getName () :string,
+}
 
+let employee :iEmployee = {
+    firstName:'Himal',
+    lastName : "Thapa",
+    department :"Development",
+    manager:null,
+    salary: 30000,
+    getName:function(){
+        return this.firstName +" "+this.lastname;
+    }
+   
 };
-console.log(employee);
+console.log(Object.toString());
 // Speical operator. 
 console.log("firstName" in employee); // in operator  will check given attribute or property exists in object.
-console.log(delete employee.firstName)
+console.log(delete employee.lastName)
 console.log("firstName" in employee); // Now firstName attrivute is not exists. 
+employee.firstName =employee.getName();
+console.log(Object.toString());
+
+
 
 for ( let property in employee) {
-    console.log(employee +":" + employee[property]);
+   
+    console.log(property +":->" + employee[property]);
+
+}
+
+for ( let property of Object.keys(employee)) {
+    console.log(property +" : >> " + employee[property]);
 
 }
 

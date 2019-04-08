@@ -1,19 +1,26 @@
 var employee = {
-    firstName: 'Laxman',
-    lastname: "Gautam",
+    firstName: 'Himal',
+    lastName: "Thapa",
     department: "Development",
-    manager: "JM",
-    printName: function () {
-        return this;
+    manager: null,
+    salary: 30000,
+    getName: function () {
+        return this.firstName + " " + this.lastname;
     }
 };
-console.log(employee);
+console.log(Object.toString());
 // Speical operator. 
 console.log("firstName" in employee); // in operator  will check given attribute or property exists in object.
-console.log(delete employee.firstName);
+console.log(delete employee.lastName);
 console.log("firstName" in employee); // Now firstName attrivute is not exists. 
+employee.firstName = employee.getName();
+console.log(Object.toString());
 for (var property in employee) {
-    console.log(employee + ":" + employee[property]);
+    console.log(property + ":->" + employee[property]);
+}
+for (var _i = 0, _a = Object.keys(employee); _i < _a.length; _i++) {
+    var property = _a[_i];
+    console.log(property + " : >> " + employee[property]);
 }
 // arithmetic operation.
 var num1 = "10";
